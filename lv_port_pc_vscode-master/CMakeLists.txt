@@ -56,6 +56,12 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 set(WORKING_DIRECTORY ${PROJECT_SOURCE_DIR})
 
+# 指定 SDL2 的 CMake 配置文件目录
+set(SDL2_DIR
+    "D:/data/lvgl2/SDL2-devel-2.30.9-mingw/SDL2-2.30.9/x86_64-w64-mingw32/lib/cmake/SDL2"
+    CACHE PATH "SDL2 CMake config directory" FORCE
+)
+
 # Find and include SDL2 library
 find_package(SDL2 REQUIRED)
 

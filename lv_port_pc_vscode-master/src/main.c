@@ -69,8 +69,24 @@ int main(int argc, char **argv)
   /* - lv_demo_stress(); */
   /* - lv_example_label_1(); */
   /* - etc. */
-  lv_demo_widgets();
+  //lv_demo_widgets();
+  /* 获取当前活动屏幕 */
+  lv_obj_t * screen = lv_screen_active();
 
+  /* 创建标签控件 */
+  lv_obj_t * label = lv_label_create(screen);
+
+  /* 设置标签显示的文字 */
+  lv_label_set_text(label, "Hello LVGL!");
+
+  /* 将标签放到屏幕中央 */
+  //lv_obj_align(label, LV_ALIGN_CENTER, 0, 0);
+  //顶部中央
+  //lv_obj_align(label, LV_ALIGN_TOP_MID, 0, 20);
+  //左上角
+  //lv_obj_align(label, LV_ALIGN_TOP_LEFT, 10, 10);
+   //底部中央
+  lv_obj_align(label, LV_ALIGN_BOTTOM_MID, 0, -20);
   while(1) {
     /* Periodically call the lv_task handler.
      * It could be done in a timer interrupt or an OS task too.*/
